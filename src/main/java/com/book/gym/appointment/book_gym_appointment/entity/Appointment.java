@@ -11,8 +11,8 @@ public class Appointment {
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "client_id",nullable = true)
-    private Client client;
+    @JoinColumn(name = "clientes_id",nullable = true)
+    private Clientes client;
 
     @ManyToOne
     @JoinColumn(name = "trainer_id",nullable = true)
@@ -28,7 +28,7 @@ public class Appointment {
 
     public Appointment() {}
 
-    public Appointment(int id, Client client, Trainer trainer, Session service, LocalDate appointmentDate, byte status, String notes) {
+    public Appointment(int id, Clientes client, Trainer trainer, Session service, LocalDate appointmentDate, byte status, String notes) {
         this.id = id;
         this.client = client;
         this.trainer = trainer;
@@ -46,11 +46,11 @@ public class Appointment {
         this.id = id;
     }
 
-    public Client getClient() {
+    public Clientes getClientes() {
         return client;
     }
 
-    public void setClient(Client client) {
+    public void setClientes(Clientes client) {
         this.client = client;
     }
 
